@@ -4,11 +4,11 @@ In this project, weare going to build the `Tic Tac Toe` game using HTML, CSS and
 ### Rules-
 The game has 2 players each having `O` and `X` representing them.
 There will be a square divided into 9 equal squares/cells.
-|  |  |  |
-| --- | --- | --- |
-|_ | _ | _ |
-|_ | _ | _ |
-|_ | _ | _ |
+| | | |
+|-|-|-|
+|_|_|_|
+|_|_|_|
+|_|_|_|
 
 The players take turns to fill each cell with their respective symbol.
 Whoever first fills their symbol in 3 consecutive cells linearly (horizontal, vertical, diagonal) wins.
