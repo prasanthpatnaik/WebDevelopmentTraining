@@ -107,3 +107,8 @@ h1 {
 .hide {
   display: none;
 }
+
+.winning-line {
+  color: rgb(20, 160, 20) !important;
+  background-color: #ccffc7 !important;
+}

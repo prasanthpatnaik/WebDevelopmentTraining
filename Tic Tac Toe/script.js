@@ -43,6 +43,9 @@ const checkWinner = () => {
 
     if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
       if (pos1Val === pos2Val && pos1Val === pos3Val) {
+        for(let i = 0; i<3; i++){
+          boxes[pattern[i]].classList.add("winning-line");
+        }
         showWinner(pos1Val);
       }
     }
@@ -52,6 +55,7 @@ const checkWinner = () => {
 const resetGame = () => {
   for (let box of boxes) {
     box.innerText = "";
+    box.classList.remove("winning-line")
   }
   enableBoxes();
   turnO = true;
@@ -62,9 +66,11 @@ boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerText = "O";
+      box.style.color = "rgb(0, 100, 255)";
       turnO = false;
     } else {
       box.innerText = "X";
+      box.style.color = "rgb(255, 170, 0)";
       turnO = true;
     }
     box.disabled = true;
