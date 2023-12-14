@@ -13,6 +13,18 @@ body {
   text-align: center;
 }
 
+.page-head {
+  position: fixed;
+  top: 0;
+  padding: 5px 0;
+  width: 100%;
+  background-color: #548687;
+}
+
+#game-page, .msg-container {
+  margin-top: 15vmin;
+}
+
 main {
   margin-top: 1rem;
 }
@@ -111,4 +123,9 @@ h1 {
 .winning-line {
   color: rgb(20, 160, 20) !important;
   background-color: #ccffc7 !important;
+}
+
+.draw-game {
+  color: red !important;
+  background-color: #ffccc7 !important;
 }

@@ -3,6 +3,7 @@ let resetBtn = document.querySelector("#reset-btn");
 let newGameBtn = document.querySelector("#new-game-btn");
 let winMsgContainer = document.querySelector(".msg-container");
 let winMsg = document.querySelector("#msg");
+let clickCount = 0;
 
 let turnO = true;
 
@@ -14,7 +15,7 @@ let winPatterns = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6],
+  [2, 4, 6]
 ];
 
 const disableBoxes = () => {
@@ -35,7 +36,20 @@ const showWinner = (winner) => {
   disableBoxes();
 };
 
-const checkWinner = () => {
+const checkDrawCondition = (clickCount) => {
+  if(clickCount === 9) {
+    winMsg.innerText = `It's a draw! Better luck next time`;
+    winMsgContainer.classList.remove("hide");
+    for (box of boxes) {
+      box.classList.add("draw-game");
+      box.disabled = true;
+    }
+    clickCount = 0;
+  }
+};
+
+const checkWinner = (clickCount) => {
+  let gotWinner = false;
   for (let pattern of winPatterns) {
     let pos1Val = boxes[pattern[0]].innerText;
     let pos2Val = boxes[pattern[1]].innerText;
@@ -46,17 +60,23 @@ const checkWinner = () => {
         for(let i = 0; i<3; i++){
           boxes[pattern[i]].classList.add("winning-line");
         }
+        gotWinner = true;
         showWinner(pos1Val);
       }
     }
+  }
+  if(!(gotWinner)) {
+    checkDrawCondition(clickCount);
   }
 };
 
 const resetGame = () => {
   for (let box of boxes) {
     box.innerText = "";
-    box.classList.remove("winning-line")
+    box.classList.remove("winning-line");
+    box.classList.remove("draw-game");
   }
+  clickCount = 0;
   enableBoxes();
   turnO = true;
   winMsgContainer.classList.add("hide");
@@ -73,9 +93,9 @@ boxes.forEach((box) => {
       box.style.color = "rgb(255, 170, 0)";
       turnO = true;
     }
+    clickCount++;
     box.disabled = true;
-
-    checkWinner();
+    checkWinner(clickCount);
   });
 });
 
