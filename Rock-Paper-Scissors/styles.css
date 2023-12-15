@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+h1 {
+  position: sticky;
+  top: 0;
+  background-color: #081b31;
+  color: white;
+  height: 5rem;
+  width: 100vw;
+  line-height: 5rem;
+  font-size: 5vw;
+}
+
+.game-container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+aside {
+  width: 25vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: azure;
+  font-weight: 700;
+}
+
+.game {
+  width: 100%;
+  margin: 5vw 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.choices {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice {
+  height: 10.5vw;
+  width: 10.5vw;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.choice:hover {
+  background-color: #081b31;
+  cursor: pointer;
+}
+
+.msg-container {
+  margin-top: 5rem;
+  line-height: 10vmin;
+}
+
+#msg {
+  padding: 1rem;
+  background-color: #081b31;
+  color: white;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+aside p:first-of-type {
+  font-size: 4vw;
+}
+
+aside p:last-of-type {
+  font-size: 8vw;
+}
+
+#computer-score-side {
+  right: 0;
+  background-color: rgb(250, 200, 200);
+}
+
+#your-score-side {
+  left: 0;
+  background-color: rgb(200, 250, 200);
+}
+
+#comp-score {
+  background: linear-gradient(rgb(248, 136, 50), rgb(162, 27, 27));
+  background-clip: text;
+  color: transparent;
+}
+
+#user-score {
+  background: linear-gradient(rgb(120, 245, 62), rgb(2, 103, 4));
+  background-clip: text;
+  color: transparent;
+}
+
+img {
+  height: 10vw;
+  width: 10vw;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
