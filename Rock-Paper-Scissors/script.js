@@ -12,22 +12,22 @@ const genCompChoice = () => {
     return options[randIdx];
 };
 
-const showWinner = (userWin) => {
+const showWinner = (userWin, userChoice, compChoice) => {
     if (userWin) {
         userScore++;
         userScoreDisplay.innerText = userScore;
-        msg.innerText = "You win!";
+        msg.innerText = `You win! Your ${userChoice} beats ${compChoice}`;
         msg.style.backgroundColor = "darkgreen";
     } else {
         compScore++;
         compScoreDisplay.innerText = compScore;
-        msg.innerText = "You lose.";
+        msg.innerText = `You lose. Your ${userChoice} beaten by ${compChoice}`;
         msg.style.backgroundColor = "darkred";
     }
 };
 
 const showDraw = () => {
-    msg.innerText = "It's a draw.";
+    msg.innerText = "It's a draw";
     msg.style.backgroundColor = "#081b31";
 };
 
@@ -51,7 +51,7 @@ const playGame = (userChoice) => {
     }
 
     if (!isDraw) {
-        showWinner(userWin);
+        showWinner(userWin, userChoice, compChoice);
     } else {
         showDraw();
     }
