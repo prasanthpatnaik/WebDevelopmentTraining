@@ -24,6 +24,7 @@ let displayOutput = () => {
 
 input.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
+        event.preventDefault();
         displayOutput();
     }
 });
