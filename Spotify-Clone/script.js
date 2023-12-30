@@ -67,7 +67,6 @@ masterPlay.addEventListener('click', () => {
 
 // Update progress bar along with song
 audio.addEventListener('timeupdate', () => {
-    console.log(audio.currentTime, audio.duration);
     let progress = parseInt((audio.currentTime/audio.duration)*100);
     myProgressBar.value = progress;
 });
@@ -75,7 +74,6 @@ audio.addEventListener('timeupdate', () => {
 // Seeking the address bar updates the song
 myProgressBar.addEventListener('change', () => {
     let seek = parseInt((myProgressBar.value*audio.duration)/100);
-    console.log(seek);
     audio.currentTime = seek;
 });
 
