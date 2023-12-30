@@ -11,14 +11,14 @@ body {
 
 nav {
     font-family: 'Ubuntu', sans-serif;
-    background-color: black;
-    color: white;
 }
 
 nav ul {
     display: flex;
     align-items: center;
     height: 65px;
+    background-color: black;
+    color: white;
 }
 
 nav ul li {
@@ -59,8 +59,7 @@ nav ul li a {
 }
 
 .songList {
-    width: 50%;
-    max-width: 50%;
+    min-width: 50%;
 }
 
 .songItemContainer {
@@ -108,6 +107,7 @@ nav ul li a {
 
 #myProgressBar {
     width: 80vw;
+    cursor: pointer;
 }
 
 .icons {
@@ -128,4 +128,12 @@ nav ul li a {
 .songInfo img {
     opacity: 0;
     transition: opacity 0.3s ease-in;
+}
+
+@media only screen and (max-width: 1200px) {
+    .songList {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
